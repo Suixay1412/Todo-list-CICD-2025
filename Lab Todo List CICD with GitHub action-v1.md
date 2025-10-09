@@ -1380,16 +1380,17 @@ start htmlcov/index.html  # Windows
 ```
 
 ## แนบรูปผลการทดลองการทดสอบระบบ
-```plaintext
-# แนบรูปผลการทดลองที่นี่
 
-``` 
+<img width="1919" height="438" alt="image" src="https://github.com/user-attachments/assets/a832561d-8d72-476d-88fe-d947156bc271" />
+
 ## คำถามการทดลอง
 ให้จับคู่ Code ส่วนของการทดสอบ กับ Code การทำงาน มาอย่างน้อย 3 ฟังก์ชัน พร้อมอธิบายการทำงานของแต่ละกรณี
 ```plaintext
-# ตอบคำถามที่นี่
+- 1.test_health_endpoint_database_error() → health_check() ใช้ทดสอบเมื่อฐานข้อมูลล่ม ฟังก์ชันจริงจะคืนค่า "unhealthy" และรหัส 503
 
+- 2.test_create_todo_without_title() → create_todo() ทดสอบการสร้างงานโดยไม่มีชื่อ ฟังก์ชันจริงตรวจสอบข้อมูลและคืนค่า error 400
 
+- 3.test_update_todo_title() → update_todo() ทดสอบการอัปเดตชื่อรายการ ฟังก์ชันจริงจะค้นหา todo ตาม id แล้วบันทึกข้อมูลใหม่กลับฐานข้อมูล
 ```
 
 
