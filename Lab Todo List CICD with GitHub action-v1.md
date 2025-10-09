@@ -1731,10 +1731,8 @@ https://flask-todo-app.onrender.com
 **เพิ่ม RENDER_DEPLOY_HOOK_URL และ RENDER_APP_URL บน GitHub Repository**
 **ทำการ push ไปที่ GitHub Repository** แล้วตรวจสอบผลการทำงาน
 ## บันทึกรูปผลการทำงาน
-```bash
-# บันทึกรูปผลการทำงานที่นี่
-``` 
-
+<img width="1919" height="833" alt="image" src="https://github.com/user-attachments/assets/cef4212e-199f-4288-b05d-e5fbed652f24" />
+ 
 ---
 
 
