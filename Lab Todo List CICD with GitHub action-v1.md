@@ -1896,13 +1896,13 @@ curl https://YOUR_RAILWAY_APP_URL/api/health
 
 ก่อน push code และ trigger GitHub Actions ให้ตรวจสอบ:
 
-- [ ] Render Database สร้างเสร็จและสถานะ "Available"
-- [ ] Render Web Service deploy สำเร็จและสถานะ "Live"
+- [✓] Render Database สร้างเสร็จและสถานะ "Available"
+- [✓] Render Web Service deploy สำเร็จและสถานะ "Live"
 - [ ] Railway Database และ Web Service ทำงานปกติ
 - [ ] สร้าง GitHub Secrets ครบ 5 ตัว
 - [ ] ทดสอบ health endpoints ของทั้ง Render และ Railway ได้
 - [ ] URL ไม่มี `/` ท้าย
-- [ ] DATABASE_URL ใช้ Internal URL (สำหรับ Render)
+- [✓] DATABASE_URL ใช้ Internal URL (สำหรับ Render)
 
 ---
 
@@ -2123,14 +2123,14 @@ docker-compose up -d
 
 ตรวจสอบว่าทำสำเร็จทุกข้อ:
 
-- [ ] สร้าง GitHub repository และ clone ลงเครื่อง
-- [ ] สร้าง Flask application ที่มี CRUD operations ครบถ้วน
-- [ ] เขียน tests ที่ครอบคลุม code coverage > 80%
-- [ ] สร้าง Dockerfile ที่ optimize แล้ว
-- [ ] สร้าง docker-compose.yml ที่แยก services
-- [ ] รัน application ด้วย Docker และทดสอบใน local สำเร็จ
-- [ ] สร้าง GitHub Actions workflow ที่มีทั้ง CI และ CD
-- [ ] Deploy ไปยัง Render สำเร็จ
+- [✓] สร้าง GitHub repository และ clone ลงเครื่อง
+- [✓] สร้าง Flask application ที่มี CRUD operations ครบถ้วน
+- [✓] เขียน tests ที่ครอบคลุม code coverage > 80%
+- [✓] สร้าง Dockerfile ที่ optimize แล้ว
+- [✓] สร้าง docker-compose.yml ที่แยก services
+- [✓] รัน application ด้วย Docker และทดสอบใน local สำเร็จ
+- [✓] สร้าง GitHub Actions workflow ที่มีทั้ง CI และ CD
+- [✓] Deploy ไปยัง Render สำเร็จ
 - [ ] Deploy ไปยัง Railway สำเร็จ
 - [ ] ทดสอบ API endpoints บน production
 - [ ] Health checks ทำงานถูกต้อง
@@ -2141,14 +2141,19 @@ docker-compose up -d
 
 1. **Docker Architecture**:
    - เหตุใดจึงต้องแยก database และ application เป็นคนละ containers ?
+   - ans เพื่อแยกหน้าที่และทำให้จัดการแต่ละส่วนได้อิสระ เช่น อัปเดตหรือสเกลแยกกันได้โดยไม่กระทบกัน
    - Multi-stage build มีประโยชน์อย่างไร?
+   - ans ช่วยลดขนาด image, เพิ่มความปลอดภัย และเก็บเฉพาะไฟล์จำเป็นในขั้นตอน deploy จริง
 
 2. **Testing Strategy**:
    - การวัด code coverage มีความสำคัญอย่างไร?
+   - ans ช่วยตรวจสอบว่าการทดสอบครอบคลุมโค้ดครบหรือไม่ ลดความเสี่ยงจากบั๊กและเพิ่มความน่าเชื่อถือของระบบ
 
 3. **Deployment**:
    - Health check endpoint มีความสำคัญอย่างไร?
+   - ans ใช้ตรวจสอบสถานะของระบบว่าทำงานปกติหรือไม่ เพื่อให้ระบบสามารถรีสตาร์ตอัตโนมัติเมื่อเกิดปัญหา
    - Render และ Railway มีความแตกต่างกันอย่่างไร?
+   - ans Render เหมาะกับ production และมีฟีเจอร์ครบกว่า ส่วน Railway ใช้งานง่าย เหมาะกับโปรเจ็กต์ขนาดเล็กหรือทดลองระบบ
 
 
 ---
